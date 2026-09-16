@@ -22,3 +22,22 @@ $box2->width = 20;
 $box2->height = 3;
 var_dump($box2);
 echo "Volume: " . $box2->volume() . "\n\n";
+
+class MetalBox extends Box {
+    public $metalType;
+
+    public function volumeType($length, $width, $height, $metalType) {
+        $this->length = $length;
+        $this->width = $width;
+        $this->height = $height;
+        $this->metalType = $metalType;
+    }
+
+    public function getMetalType() {
+        return $this->metalType;
+    }
+}
+
+$metalBox1 = new MetalBox();
+$metalBox1->volumeType(10, 15, 5, "Aluminum");
+var_dump($metalBox1);
