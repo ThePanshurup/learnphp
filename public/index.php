@@ -3,13 +3,6 @@ if (preg_match('/\.(?:png|jpg|jpeg|gif|js|css)$/', $_SERVER["REQUEST_URI"])) {
     return false;
 }
 
-
-function dump(...$vars) {
-    echo '<pre>';
-    var_dump(...$vars);
-    echo '</pre>';
-}
-
 spl_autoload_register(function ($class) {
     $class = substr($class, 4);
     $class = str_replace ('\\', '/', $class);
@@ -18,6 +11,7 @@ spl_autoload_register(function ($class) {
 
 use App\Router;
 
+require __DIR__ . '/../helpers.php';
 require __DIR__ . '/../routes.php';
 
 $router = new Router($_SERVER['REQUEST_URI']);
