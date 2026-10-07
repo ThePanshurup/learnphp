@@ -86,7 +86,7 @@ class PublicController {
         view('forms');
     }
 
-    public function answer() {
-        view($_GET);
+    public function answer(){
+        dump($_GET, $_POST);
     }
 }

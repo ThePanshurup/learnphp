@@ -6,7 +6,7 @@ function dump(...$vars) {
     echo '</pre>';
 }
 
-function view($viewName, $variables = []) {
+function view($viewname, $variables=[]){
     extract($variables);
-    include __DIR__ . '/views/' . $viewName . '.php';
+    include __DIR__ . "/views/$viewname.php";
 }
